@@ -1,47 +1,26 @@
 
-/* FIELD LAYOUT */
-
 .form-field {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 0;
   min-width: 0;
 }
 
-/* ICON CONTAINER */
-
 .field-icon {
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-
-  display: grid;
-  place-items: center;
-
-  background: #f3f6fa;
-  border-radius: 9px;
+  display: none;
 }
-
-.field-icon svg {
-  width: 18px;
-  height: 18px;
-  color: #34445a;
-  stroke-width: 2;
-}
-
-/* FIELD CONTENT */
 
 .field-content {
   display: flex;
   flex-direction: column;
   flex: 1;
   min-width: 0;
-  gap: 6px;
+  gap: 5px;
 }
 
 .field-content label {
-  font-size: 11px;
-  font-weight: 650;
+  font-size: 12px;
+  font-weight: 600;
   color: #263449;
 }
 
@@ -49,81 +28,66 @@
   color: #e54848;
 }
 
-/* INPUTS */
-
 .field-content input,
 .field-content textarea {
   width: 100%;
   padding: 8px 10px;
-
-  background: #ffffff;
-  border: 1px solid #dce2e9;
-  border-radius: 7px;
-
+  background: #fff;
+  border: 1px solid #e0e5eb;
+  border-radius: 6px;
   font-family: inherit;
-  font-size: 12px;
+  font-size: 13px;
   color: #263449;
-
   outline: none;
   transition: border-color 0.2s ease;
 }
 
 .field-content input {
-  height: 33px;
+  height: 34px;
 }
 
 .field-content textarea {
-  min-height: 75px;
+  min-height: 65px;
   resize: vertical;
   line-height: 1.5;
 }
 
 .field-content input::placeholder,
 .field-content textarea::placeholder {
-  color: #98a3b3;
+  color: #9aa4b2;
+  font-size: 12px;
 }
 
 .field-content input:focus,
 .field-content textarea:focus {
-  border-color: #82a9d6;
-  box-shadow: 0 0 0 2px rgba(93, 159, 244, 0.08);
+  border-color: #8aafd9;
 }
 
-/* DARK MODE */
-
+/* Dark Mode */
 .dark .field-icon {
-  background: #f3f6fa;
+  background: #f5f7fa;
 }
 
-.dark .field-icon svg {
-  color: #34445a;
-}
-
+.dark .field-icon svg,
 .dark .field-content label {
   color: #263449;
 }
 
 .dark .field-content input,
 .dark .field-content textarea {
-  background: #ffffff;
-  border-color: #dce2e9;
+  background: #fff;
   color: #263449;
+  border-color: #e0e5eb;
 }
 
 .dark .field-content input::placeholder,
 .dark .field-content textarea::placeholder {
-  color: #98a3b3;
+  color: #9aa4b2;
 }
 
-/* MOBILE */
-
+/* Mobile */
 @media (max-width: 560px) {
   .form-field {
-    gap: 10px;
-  }
-
-  .field-icon {
-    width: 36px;
-    height: 36px;
+    gap: 0;
   }
 }
