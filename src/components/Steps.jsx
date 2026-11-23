@@ -1,18 +1,22 @@
 
 import "../styles/Steps.css";
 
-function Steps() {
+function Steps({ currentStep = 1 }) {
   return (
-    <div className="steps-container">
-      <div className="step active">01</div>
+    <div className="page-steps">
 
-      <div className="step-line"></div>
+      <div className={`page-step ${currentStep >= 1 ? "active" : ""}`}>
+        <span>01</span>
+        <p>Create Card</p>
+      </div>
 
-      <div className="step">02</div>
+      <div className="page-step-line"></div>
 
-      <div className="step-line"></div>
+      <div className={`page-step ${currentStep >= 2 ? "active" : ""}`}>
+        <span>02</span>
+        <p>Preview & Download</p>
+      </div>
 
-      <div className="step">03</div>
     </div>
   );
 }

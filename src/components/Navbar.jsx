@@ -1,46 +1,57 @@
 
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { RefreshCw, Menu, X } from "lucide-react";
+
 import ThemeToggle from "./ThemeToggle";
 import "../styles/Navbar.css";
 
 function Navbar({ darkMode, setDarkMode }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <header className="navbar">
 
-      {/* Logo */}
-      <div className="navbar-logo">
+      <Link
+        to="/"
+        className="navbar-logo"
+        onClick={() => setMenuOpen(false)}
+      >
         <RefreshCw className="logo-icon" />
         <span>CARDIFY</span>
-      </div>
+      </Link>
 
-      {/* Navigation */}
       <nav className={`navbar-links ${menuOpen ? "open" : ""}`}>
-        <a href="#home" onClick={() => setMenuOpen(false)}>
-          Home
-        </a>
 
-        <a
-          href="#create"
-          className="active"
+        <Link
+          to="/"
+          className={location.pathname === "/" ? "active" : ""}
+          onClick={() => setMenuOpen(false)}
+        >
+          Home
+        </Link>
+
+        <Link
+          to="/create"
+          className={location.pathname === "/create" ? "active" : ""}
           onClick={() => setMenuOpen(false)}
         >
           Create Card
-        </a>
+        </Link>
 
-        <a href="#preview" onClick={() => setMenuOpen(false)}>
-          Preview
-        </a>
+        <Link
+          to="/download"
+          className={location.pathname === "/download" ? "active" : ""}
+          onClick={() => setMenuOpen(false)}
+        >
+          Preview & Download
+        </Link>
 
-        <a href="#download" onClick={() => setMenuOpen(false)}>
-          Download
-        </a>
       </nav>
 
-      {/* Right Actions */}
       <div className="navbar-actions">
+
         <ThemeToggle
           darkMode={darkMode}
           setDarkMode={setDarkMode}
@@ -54,6 +65,7 @@ function Navbar({ darkMode, setDarkMode }) {
         >
           {menuOpen ? <X /> : <Menu />}
         </button>
+
       </div>
 
     </header>

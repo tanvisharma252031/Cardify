@@ -10,10 +10,12 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+import { useNavigate } from "react-router-dom";
 import FormField from "./FormField";
 import "../styles/CreateCardForm.css";
 
 function CreateCardForm({ formData, setFormData }) {
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,7 +28,7 @@ function CreateCardForm({ formData, setFormData }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Your Cardify profile is ready!");
+    navigate("/download");
   };
 
   const fields = [
@@ -84,11 +86,11 @@ function CreateCardForm({ formData, setFormData }) {
 
   return (
     <section className="create-form-container" id="create">
-
-      <form className="create-card-form" onSubmit={handleSubmit}>
-
+      <form
+        className="create-card-form"
+        onSubmit={handleSubmit}
+      >
         <div className="form-grid">
-
           {fields.map((field) => (
             <FormField
               key={field.name}
@@ -97,16 +99,13 @@ function CreateCardForm({ formData, setFormData }) {
               onChange={handleChange}
             />
           ))}
-
         </div>
 
         <button type="submit" className="generate-btn">
           Generate My Card
           <ArrowRight size={19} />
         </button>
-
       </form>
-
     </section>
   );
 }

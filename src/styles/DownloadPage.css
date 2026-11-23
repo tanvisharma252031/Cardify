@@ -1,0 +1,119 @@
+
+.download-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 35px 25px 50px;
+}
+
+/* Heading */
+
+.download-heading {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.download-heading h1 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #0d1d35;
+  margin-bottom: 10px;
+}
+
+.download-heading p {
+  font-size: 16px;
+  color: #526b8c;
+}
+
+/* Main Preview Panel */
+
+.download-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 28px;
+  align-items: center;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid #dce9f9;
+  border-radius: 24px;
+}
+
+.card-preview-section {
+  min-width: 0;
+  padding: 5px;
+}
+
+/* Back Button */
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 260px;
+  min-height: 50px;
+  margin: 28px auto 0;
+  border: 1px solid #bdcfe8;
+  border-radius: 14px;
+  background: transparent;
+  color: #142d49;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Dark Mode */
+
+.dark .download-heading h1 {
+  color: #e6efff;
+}
+
+.dark .download-heading p {
+  color: #a9bed8;
+}
+
+.dark .download-container {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: #344960;
+}
+
+.dark .back-btn {
+  color: #e6efff;
+  border-color: #526a85;
+}
+
+/* Responsive */
+
+@media (max-width: 850px) {
+  .download-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .download-page {
+    padding: 25px 15px;
+  }
+
+  .download-heading h1 {
+    font-size: 28px;
+  }
+
+  .download-heading p {
+    font-size: 13px;
+  }
+
+  .download-container {
+    padding: 17px;
+    border-radius: 16px;
+  }
+
+  .back-btn {
+    width: 100%;
+  }
+}

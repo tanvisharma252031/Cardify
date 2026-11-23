@@ -1,59 +1,87 @@
 
-.steps-container {
+.page-steps {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  width: 100%;
-  margin: 10px auto 28px;
+  gap: 20px;
+  margin: 25px auto 35px;
 }
 
-.step {
-  width: 32px;
-  height: 32px;
+.page-step {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #8997a9;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.page-step span {
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid #cbd5e1;
   border-radius: 50%;
-  color: #8491a3;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
 }
 
-.step.active {
-  background: #183653;
-  border-color: #183653;
-  color: #fff;
+.page-step.active {
+  color: #183653;
+  font-weight: 600;
 }
 
-.step-line {
-  width: 45px;
+.page-step.active span {
+  background: #183653;
+  border-color: #183653;
+  color: white;
+}
+
+.page-step-line {
+  width: 55px;
   height: 1px;
   background: #cbd5e1;
 }
 
-.dark .step {
-  border-color: #40536a;
-  color: #a5b4c8;
+/* Dark mode */
+.dark .page-step {
+  color: #8999ad;
 }
 
-.dark .step.active {
+.dark .page-step.active {
+  color: #d5e8ff;
+}
+
+.dark .page-step.active span {
   background: #d5e8ff;
   border-color: #d5e8ff;
   color: #183653;
 }
 
-.dark .step-line {
+.dark .page-step-line {
   background: #40536a;
 }
 
-@media (max-width: 480px) {
-  .steps-container {
-    gap: 9px;
+/* Responsive */
+@media (max-width: 600px) {
+  .page-steps {
+    gap: 12px;
+    margin: 20px auto 25px;
   }
 
-  .step-line {
+  .page-step {
+    gap: 6px;
+    font-size: 11px;
+  }
+
+  .page-step span {
+    width: 27px;
+    height: 27px;
+  }
+
+  .page-step-line {
     width: 30px;
   }
 }

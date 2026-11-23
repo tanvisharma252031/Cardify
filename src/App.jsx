@@ -1,11 +1,14 @@
 
 import { useState } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import Steps from "./components/Steps";
-import Hero from "./components/Hero";
-import CreateCardForm from "./components/CreateCardForm";
 import Footer from "./components/Footer";
+import Steps from "./components/Steps";
+
+import HomePage from "./pages/HomePage";
+import CreatePage from "./pages/CreatePage";
+import DownloadPage from "./pages/DownloadPage";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -20,6 +23,10 @@ function App() {
     website: "",
   });
 
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+  const currentStep = location.pathname === "/download" ? 2 : 1;
+
   return (
     <div className={darkMode ? "app dark" : "app"}>
 
@@ -28,18 +35,26 @@ function App() {
         setDarkMode={setDarkMode}
       />
 
-      <main className="main-content">
+      {!isHomePage && <Steps currentStep={currentStep} />}
 
-        <Steps />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
 
-        <Hero />
-
-        <CreateCardForm
-          formData={formData}
-          setFormData={setFormData}
+        <Route
+          path="/create"
+          element={
+            <CreatePage
+              formData={formData}
+              setFormData={setFormData}
+            />
+          }
         />
 
-      </main>
+        <Route
+          path="/download"
+          element={<DownloadPage formData={formData} />}
+        />
+      </Routes>
 
       <Footer />
 

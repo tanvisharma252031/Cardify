@@ -1,0 +1,210 @@
+
+.business-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  align-items: start;
+  min-width: 0;
+}
+
+.card-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.business-card {
+  width: 100%;
+  aspect-ratio: 1.65;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #e7edf5;
+  box-shadow: 0 5px 14px rgba(25, 55, 90, 0.12);
+  padding: 7%;
+  color: #10213a;
+  isolation: isolate;
+}
+
+/* FRONT CARD */
+
+.front-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.front-top h2 {
+  font-size: clamp(15px, 1.8vw, 23px);
+  font-weight: 750;
+  letter-spacing: -0.7px;
+  margin-bottom: 5px;
+  overflow-wrap: anywhere;
+}
+
+.card-role {
+  color: #0759d9;
+  font-size: clamp(10px, 1.15vw, 14px);
+  font-weight: 600;
+}
+
+.card-initials {
+  font-size: clamp(20px, 2.5vw, 31px);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.card-initials span,
+.back-initials span {
+  color: #0864ef;
+}
+
+.card-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 22px;
+  position: relative;
+  z-index: 2;
+  max-width: 85%;
+}
+
+.card-contact div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  font-size: clamp(9px, 0.95vw, 12px);
+  font-weight: 500;
+}
+
+.card-contact svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: #172d48;
+  stroke-width: 2;
+}
+
+.card-contact span {
+  overflow-wrap: anywhere;
+}
+
+/* BACK CARD */
+
+.back-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.back-initials {
+  font-size: clamp(36px, 4vw, 49px);
+  font-weight: 800;
+  position: relative;
+  z-index: 2;
+  letter-spacing: -2px;
+}
+
+.back-card h3 {
+  font-size: clamp(10px, 1.2vw, 15px);
+  letter-spacing: 4px;
+  margin-top: 9px;
+  position: relative;
+  z-index: 2;
+  overflow-wrap: anywhere;
+}
+
+.back-line {
+  width: 36px;
+  height: 2px;
+  background: #0864ef;
+  margin: 12px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.back-card p {
+  color: #536b8c;
+  font-size: clamp(10px, 1.1vw, 14px);
+  font-weight: 500;
+  position: relative;
+  z-index: 2;
+}
+
+/* BLUE WAVES */
+
+.card-wave {
+  position: absolute;
+  width: 120%;
+  height: 75px;
+  right: -20%;
+  bottom: -42px;
+  border-radius: 50% 45% 0 0;
+  pointer-events: none;
+}
+
+.wave-one {
+  background: #8ec5ff;
+  z-index: 0;
+}
+
+.wave-two {
+  background: #b9dcff;
+  bottom: -22px;
+  right: -18%;
+  z-index: 0;
+}
+
+.wave-three {
+  background: #e0f0ff;
+  bottom: -2px;
+  right: -15%;
+  z-index: 0;
+}
+
+/* BACK CARD WAVES */
+
+.back-card .wave-one {
+  bottom: -48px;
+}
+
+.back-card .wave-two {
+  bottom: -28px;
+}
+
+.back-card .wave-three {
+  bottom: -8px;
+}
+
+/* FRONT AND BACK LABELS */
+
+.card-label {
+  padding: 6px 22px;
+  background: #e6f0fc;
+  color: #183653;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .business-cards {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .business-card {
+    max-width: 440px;
+  }
+}
