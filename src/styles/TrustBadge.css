@@ -1,0 +1,31 @@
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-bottom: 14px;
+
+  font-size: 12px;
+  font-weight: 500;
+  color: #26364c;
+}
+
+.trust-avatars {
+  display: flex;
+  align-items: center;
+  padding-left: 4px;
+}
+
+.trust-avatars img {
+  width: 28px;
+  height: 28px;
+
+  object-fit: cover;
+  border-radius: 50%;
+
+  border: 2px solid #d9ecff;
+
+  margin-left: -5px;
+}

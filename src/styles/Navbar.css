@@ -1,0 +1,182 @@
+
+/* NAVBAR */
+
+.navbar {
+  width: 100%;
+  max-width: 1100px;
+  min-height: 70px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+
+  position: relative;
+  z-index: 100;
+}
+
+/* LOGO */
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-self: start;
+
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #07111e;
+}
+
+.logo-icon {
+  width: 27px;
+  height: 27px;
+  stroke-width: 3;
+}
+
+/* NAVIGATION LINKS */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: 9px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #111827;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  padding: 10px 15px;
+  border-radius: 12px;
+
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+  background: rgba(88, 165, 255, 0.15);
+  color: #0754b5;
+}
+
+/* RIGHT ACTIONS */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  gap: 12px;
+}
+
+/* HAMBURGER */
+
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.8);
+  color: #111827;
+
+  cursor: pointer;
+}
+
+/* DARK MODE */
+
+.dark .navbar-logo,
+.dark .navbar-links a {
+  color: #ffffff;
+}
+
+.dark .navbar-links a.active,
+.dark .navbar-links a:hover {
+  background: rgba(88, 165, 255, 0.2);
+  color: #8ec5ff;
+}
+
+.dark .menu-toggle {
+  background: #253c57;
+  color: #ffffff;
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+  .navbar {
+    grid-template-columns: auto 1fr auto;
+    padding: 0 20px;
+  }
+
+  .navbar-logo {
+    font-size: 21px;
+  }
+
+  .navbar-links {
+    gap: 2px;
+  }
+
+  .navbar-links a {
+    font-size: 11px;
+    padding: 9px 8px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .navbar {
+    min-height: 65px;
+    padding: 12px 18px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .navbar-logo {
+    font-size: 22px;
+  }
+
+  .navbar-actions {
+    gap: 10px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+
+    width: 100%;
+    order: 3;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+
+    padding: 12px 0 5px;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .navbar-links a {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 13px;
+  }
+}

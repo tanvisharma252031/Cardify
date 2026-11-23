@@ -1,0 +1,42 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 18%, #c9e5ff 0%, transparent 55%),
+    linear-gradient(180deg, #b8ddff, #eaf5ff 65%, #ffffff);
+  transition: 0.3s ease;
+}
+
+.app.dark {
+  background:
+    radial-gradient(ellipse at 50% 18%, #1b3b5e, transparent 55%),
+    linear-gradient(180deg, #0c1b2d, #101827 65%, #080f1a);
+}
+
+.dark .navbar-logo,
+.dark .navbar-links a {
+  color: #ffffff;
+}
+
+.dark .theme-toggle {
+  background: #253c57;
+  color: white;
+}
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 20px 44px;
+}
